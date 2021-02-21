@@ -19,8 +19,8 @@
 
 <body>
     <div id="app">
+        <div class="flex-col max-w-4xl mx-auto p-8 space-y-2 relative">
 
-        <div class="flex-col max-w-4xl mx-auto p-8 space-y-2" v-if="!isZoom">
             <h1 class="text-4xl font-semibold bg-gray-300 p-4">Gallery </h1>
             <h3 class="text-xl font-light bg-gray-100">Liked : {{countLike}}</h3>
 
@@ -35,7 +35,7 @@
                 <input type="search" v-model.lazy.trim="searchWord" v-show="searchTab" placeholder="Type Anythings"
                     class="border border-gray-300 p-1 w-10/12">
                 <button class="bg-red-500 w-2/12 text-md text-white" v-show="searchTab"
-                    v-on:click="cancleSearch">Cancle</button>
+                    v-on:click="cancleSearch">Cancel!</button>
             </div>
 
             <h3 class="text-3xl items-center" v-if="searchPic.length == 0"> No Photo</h3>
@@ -65,25 +65,25 @@
                 <!-- </a> -->
                 <p class="my-3">{{task.detail}}</p>
             </div>
+            
         </div>
 
-        <div class="bg-black min-h-screen w-full flex justify-center" v-else="isZoom">
+        <div class="bg-black min-h-screen w-full flex justify-center fixed left-0 top-0 bg-opacity-80" v-if="isZoom">
             <div class="container flex flex-col h-full justify-center  mt-10">
                 <div class="flex items-center justify-end cursor-pointer">
-                        <i v-on:click="zoomOutImage" class="fas fa-window-close text-white text-5xl"></i>
+                    <i v-on:click="zoomOutImage" class="fas fa-window-close text-white text-5xl"></i>
                 </div>
-
                 <div class="bg-red-300 w-8/12  ml-24">
                     <img v-bind:src="currentImg" class="">
                 </div>
-
             </div>
         </div>
 
+    </div>
 
+    
+    <!-- my main.js -->
 
-        <!-- my main.js -->
-
-        <script src="./main.js"></script>
+    <script src="./main.js"></script>
 
 </body>

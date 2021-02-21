@@ -72,8 +72,6 @@ const app = {
         zoomInImage(index){
             this.currentImg = this.searchPic[index].src 
             this.isZoom = true
-            console.log("Zoom Activate" + this.currentImg);
-
         },
         zoomOutImage(){
             this.isZoom = false
